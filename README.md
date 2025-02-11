@@ -33,7 +33,7 @@ A built-in remote inference server that allows clients to send input data and re
 
 ## **Installation**
 ```bash
-git clone https://github.com/your-org/symmetrical-eureka.git
+git clone https://github.com/thetearcompany/symmetrical-eureka.git
 cd symmetrical-eureka
 npm install
 ```
