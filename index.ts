@@ -1,4 +1,4 @@
-interface Tensor {
+export interface Tensor {
     shape: number[];
     data: Float32Array;
     reshape(newShape: number[]): Tensor;
@@ -9,7 +9,7 @@ interface Tensor {
     relu(): Tensor;
 }
 
-class TensorImpl implements Tensor {
+export class TensorImpl implements Tensor {
     shape: number[];
     data: Float32Array;
     
@@ -61,12 +61,12 @@ class TensorImpl implements Tensor {
     }
 }
 
-interface Layer {
+export interface Layer {
     forward(input: Tensor): Tensor;
     backward(error: Tensor): Tensor;
 }
 
-class DenseLayer implements Layer {
+export class DenseLayer implements Layer {
     weights: Tensor;
     biases: Tensor;
     
@@ -84,12 +84,12 @@ class DenseLayer implements Layer {
     }
 }
 
-interface Loss {
+export interface Loss {
     compute(output: Tensor, target: Tensor): number;
     gradient(output: Tensor, target: Tensor): Tensor;
 }
 
-class CategoricalCrossEntropy implements Loss {
+export class CategoricalCrossEntropy implements Loss {
     compute(output: Tensor, target: Tensor): number {
         let probs = output.softmax();
         let loss = 0;
@@ -105,11 +105,11 @@ class CategoricalCrossEntropy implements Loss {
     }
 }
 
-interface Optimizer {
+export interface Optimizer {
     update(layer: DenseLayer, gradient: Tensor): void;
 }
 
-class SGD implements Optimizer {
+export class SGD implements Optimizer {
     learningRate: number;
 
     constructor(learningRate: number) {
@@ -122,7 +122,7 @@ class SGD implements Optimizer {
     }
 }
 
-class NeuralNetwork {
+export class NeuralNetwork {
     layers: Layer[];
     lossFunction: Loss;
     optimizer: Optimizer;
@@ -158,7 +158,7 @@ class NeuralNetwork {
     }
 }
 
-class RPCServer {
+export class RPCServer {
     port: number;
     neuralNetwork: NeuralNetwork;
 
