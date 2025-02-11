@@ -1,6 +1,6 @@
 # symmetrical-eureka
 
-# **Symmetrical-Eureka: High-Performance Tensor Processing and RPC for Neural Networks**
+# **High-Performance Tensor Processing and RPC for Neural Networks**
 
 ## **Overview**
 Symmetrical-Eureka is an advanced neural network library designed for real-time tensor operations, deep learning, and remote procedure call (RPC) integration. Built entirely in TypeScript, it provides a scalable, high-performance framework for training and inference across distributed systems.
